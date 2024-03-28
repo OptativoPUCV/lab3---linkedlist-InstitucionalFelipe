@@ -156,8 +156,8 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-/*void * popCurrent(List * list) {
-  if (list == NULL) {
+*void * popCurrent(List * list) {
+  /*if (list == NULL) {
     return NULL;
   }
   if (list->head == NULL){
@@ -168,9 +168,9 @@ void * popBack(List * list) {
   }
   if(list->current->next == NULL){
     list->tail = list->current->prev;
-  }
+  }*/
     return NULL;
-}*/
+}
 
 void cleanList(List * list) {
     while (list->head != NULL) {
