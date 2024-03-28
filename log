@@ -50,3 +50,17 @@ Thu 28 Mar 2024 03:05:59 PM UTC:
  tests:  11|1
 total_score: 55/70
 b6572e3
+Thu 28 Mar 2024 03:09:36 PM UTC: 
+ list.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/ccoL60hI.o: in function `test_popcurrent':
+test.c:(.text+0xa99): undefined reference to `popCurrent'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: test.c:(.text+0xb17): undefined reference to `popCurrent'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: test.c:(.text+0xb7b): undefined reference to `popCurrent'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/ccoL60hI.o: in function `popFront':
+test.c:(.text+0x228): undefined reference to `popCurrent'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/ccoL60hI.o: in function `popBack':
+test.c:(.text+0x239): undefined reference to `popCurrent'
+collect2: error: ld returned 1 exit status
+Compilation failed
+beea5d3
