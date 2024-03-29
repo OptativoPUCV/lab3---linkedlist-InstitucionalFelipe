@@ -168,8 +168,16 @@ void * popCurrent(List * list) {
   }
   if(list->current->next == NULL){
     list->tail = list->current->prev;
+    list->current->prev->next = NULL;
   }
-    return NULL;
+  else{
+    list->current->prev->next = list->current->next;
+    list->cuttent->next->prev = list->current->prev;
+  }
+  void * data = list->current->data;
+  free(list->current);
+  list->current = NULL;
+  return data;
 }
 
 void cleanList(List * list) {
