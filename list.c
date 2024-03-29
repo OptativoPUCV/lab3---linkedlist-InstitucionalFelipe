@@ -160,18 +160,23 @@ void * popCurrent(List * list) {
   if (list == NULL || list->head == NULL || list->current == NULL) {
       return NULL;
   }
-  if (list->current->prev == NULL){
+  void * data = list->current->data;
+  
+  if(list->head == list->current && list->tail == list->current)
+    list->head = list->tail = NULL;
+  else if(list->head == list->current){
     list->head = list->current->next;
+    list->head->prev = NULL;
   }
-  if(list->current->next == NULL){
+  else if(list->tail == list->current){
     list->tail = list->current->prev;
-    list->current->prev->next = NULL;
+    list->tail->next = NULL;
   }
   else{
-    list->current->prev->next = list->current->next;
     list->current->next->prev = list->current->prev;
+    list->current->prev->next = list->current->next;
   }
-  void * data = list->current->data;
+  
   free(list->current);
   list->current = NULL;
   return data;
